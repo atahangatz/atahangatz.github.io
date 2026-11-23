@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duck Initiative · Blender add-ons</title>
+<meta name="description" content="Duck Initiative is a small studio making add-ons for Blender. The first one, Polygraph, shows the vertex count your game engine will see.">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0A052E">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Duck Initiative">
+<meta property="og:title" content="Duck Initiative">
+<meta property="og:description" content="A small studio making add-ons for Blender. The first one is Polygraph.">
+<meta property="og:url" content="https://duckinitiative.com/">
+<meta property="og:image" content="https://duckinitiative.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Duck Initiative duck, tail up in a splash, on dark blue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://duckinitiative.com/">
+<link rel="preload" href="assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plex-mono.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://duckinitiative.com/#org","name":"Duck Initiative","url":"https://duckinitiative.com/","logo":{"@type":"ImageObject","url":"https://duckinitiative.com/img/duck-512.png","width":512,"height":512},"description":"A small studio making add-ons for Blender. Its add-ons are sold under the label Waddle by Duck Initiative.","email":"hello@duckinitiative.com","brand":{"@type":"Brand","@id":"https://duckinitiative.com/#waddle","name":"Waddle by Duck Initiative","url":"https://duckinitiative.com/waddle.html"},"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@duckinitiative.com","availableLanguage":"en"},{"@type":"ContactPoint","contactType":"press","email":"hello@duckinitiative.com","availableLanguage":"en"}],"sameAs":["https://waddlebyduck.gumroad.com/"]},{"@type":"WebSite","@id":"https://duckinitiative.com/#site","url":"https://duckinitiative.com/","name":"Duck Initiative","inLanguage":"en","publisher":{"@id":"https://duckinitiative.com/#org"}},{"@type":"WebPage","@id":"https://duckinitiative.com/#page","url":"https://duckinitiative.com/","name":"Duck Initiative · Blender add-ons","isPartOf":{"@id":"https://duckinitiative.com/#site"},"about":{"@id":"https://duckinitiative.com/#org"},"mainEntity":{"@id":"https://duckinitiative.com/polygraph/#software"},"inLanguage":"en"},{"@type":"SoftwareApplication","@id":"https://duckinitiative.com/polygraph/#software","name":"Polygraph","description":"Polygraph is a Blender add-on that shows the vertex count your game engine will really get, checks it against a real platform budget, and tells you what to cut first.","url":"https://duckinitiative.com/polygraph/","image":"https://duckinitiative.com/polygraph/og.png","applicationCategory":"DesignApplication","applicationSubCategory":"Blender add-on","operatingSystem":"Windows, macOS, Linux","softwareRequirements":"Blender 4.2 or later","softwareVersion":"1.0.0","datePublished":"2026-12-08","license":"https://www.gnu.org/licenses/gpl-3.0.html","softwareHelp":{"@type":"CreativeWork","url":"https://duckinitiative.com/polygraph/"},"releaseNotes":"https://duckinitiative.com/polygraph/#changes","author":{"@id":"https://duckinitiative.com/#org"},"publisher":{"@id":"https://duckinitiative.com/#org"},"brand":{"@id":"https://duckinitiative.com/#waddle"},"featureList":["Engine vertex counts for glTF, Unity and Unreal Engine","A verdict against 32 platform budgets, or limits you type in","21 mesh checks","Where to Cut: the changes that would save the most","What If, edit receipts and snapshots (Pro)","In Camera and Pixel Preview (Pro)","HTML, JSON, CSV and Markdown reports","Command line check with JUnit results and a Python API (Studio)"],"offers":[{"@type":"Offer","name":"Polygraph Free","price":"0","priceCurrency":"USD","url":"https://waddlebyduck.gumroad.com/l/polygraph-free","availabilityStarts":"2026-12-08","seller":{"@id":"https://duckinitiative.com/#org"}},{"@type":"Offer","name":"Polygraph Pro","price":"19","priceCurrency":"USD","url":"https://waddlebyduck.gumroad.com/l/polygraph","availabilityStarts":"2026-12-08","seller":{"@id":"https://duckinitiative.com/#org"},"description":"For one person. $25 from January 12, 2027.","priceValidUntil":"2027-01-11"},{"@type":"Offer","name":"Polygraph Studio","price":"249","priceCurrency":"USD","url":"https://waddlebyduck.gumroad.com/l/polygraph","availabilityStarts":"2026-12-08","seller":{"@id":"https://duckinitiative.com/#org"},"description":"For a team of five. $329 from January 12, 2027.","priceValidUntil":"2027-01-11"}]}]}</script>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/story.css">
+<link rel="stylesheet" href="assets/css/extras.css">
+</head>
+<body data-no-boot data-page="home" data-notify>
+<main>
+  <!-- 00: insert the tape -->
+  <section id="s-insert" data-scene="INSERT TAPE" aria-label="Insert tape">
+    <div class="pin">
+      <p class="nosig">NO SIGNAL<small>Scroll to insert the tape</small></p>
+      <div class="chute" aria-hidden="true">
+        <div class="cass"><div class="lbl"><b>DUCK<br>INITIATIVE</b><span>DEMO REEL · SP · 2026</span><i></i></div><div class="win"><i></i><i></i></div></div>
+      </div>
+      <div class="vcr" aria-hidden="true"><span><i class="lamp"></i>POWER</span><b>DUCK-VISION 2026</b><span>CH 01</span></div>
+      <div class="flash" aria-hidden="true"><i style="background:#ECEBF5"></i><i style="background:#FFE600"></i><i style="background:#19E3FF"></i><i style="background:#2BF0A0"></i><i style="background:#FF2E93"></i><i style="background:#E63F0A"></i><i style="background:#2B3BFF"></i></div>
+      <button data-worker="rewinder" data-pose="point" data-facing="left"></button>
+      <div class="prop steps stool" aria-hidden="true"></div>
+      <span class="scroll-hint" aria-hidden="true">SCROLL ▼</span>
+    </div>
+  </section>
+
+  <!-- 01: title card. The name parts like curtains and the screen takes over -->
+  <section id="s-title" data-scene="TITLE" aria-label="Duck Initiative">
+    <div class="pin hero">
+      <div class="tvbox">
+        <video muted loop playsinline preload="none" data-poster="assets/brand/duck-initiative-hero-1920x1080.jpg" data-src="assets/brand/duck-loop.mp4" width="1920" height="1080" aria-hidden="true" tabindex="-1"></video>
+        <noscript><img class="poster" src="assets/brand/duck-initiative-hero-1920x1080.jpg" alt="" width="1920" height="1080"></noscript>
+      </div>
+      <p class="huge a" aria-hidden="true">Duck</p>
+      <p class="huge b" aria-hidden="true">Initiative</p>
+      <span class="osd tr" aria-hidden="true">SP<br>TAP THE SCREEN</span>
+      <div class="hero-copy">
+        <h1 class="sr">Duck Initiative</h1>
+        <p class="tag">Add-ons, assets and games. <span class="split">Fresh off the tape.</span></p>
+        <p class="hero-news"><a href="#cube" data-after="Our first, Polygraph, is out now. ▶">Our first, Polygraph, comes out on December&nbsp;8. ▶</a></p>
+        <div class="cta">
+          <a class="btn" href="#shelf">▶ Keep scrolling</a>
+          <a class="btn ghost" href="waddle.html" data-ch>Sold at Waddle ▶</a>
+        </div>
+      </div>
+      <button data-worker="operator" data-pose="tablet" data-facing="left"></button>
+      <div class="prop desk" aria-hidden="true"><span>Control desk</span></div>
+    </div>
+  </section>
+
+  <!-- 02: the runway. Words run sideways, the courier runs with you -->
+  <section id="s-run" data-scene="WHAT WE MAKE" aria-label="What we make">
+    <div class="pin">
+      <span class="cap" aria-hidden="true">Tape counter runs with you →</span>
+      <div class="ruler" aria-hidden="true"></div>
+      <p class="run-line">We make <span>▶</span> Blender add-ons <span>●</span> <u>assets</u> <span>●</span> mobile games <span>●</span> <u>PC games</u> <span>●</span> and sell them at Waddle.</p>
+      <div class="ruler b" aria-hidden="true"></div>
+      <button data-worker="courier" data-pose="stand" data-facing="right"></button>
+      <div class="run-floor" aria-hidden="true"><i style="background:#ECEBF5"></i><i style="background:#FFE600"></i><i style="background:#19E3FF"></i><i style="background:#2BF0A0"></i><i style="background:#FF2E93"></i><i style="background:#E63F0A"></i><i style="background:#2B3BFF"></i></div>
+    </div>
+  </section>
+
+  <!-- 03: the shelf. Tapes drop in as you scroll -->
+  <section id="shelf" data-scene="PICK A TAPE">
+    <div class="pin">
+      <p class="eyebrow">What’s on the shelf</p>
+      <h2>Pick a tape. <em>Press play.</em></h2>
+      <div class="shelf-wrap">
+        <div class="shelf" role="group" aria-label="Tapes: pick one to play it on the screen">
+          <div class="prop steps" aria-hidden="true"></div>
+          <button data-worker="clerk" data-pose="pockets" data-facing="right"></button>
+          <button class="tape" type="button" aria-pressed="false" data-tape="addons" data-osd="CH 02 ▶" data-say="Good pick. That one is finished." style="--i:0;--c:#FFE600;--h:300px">Add-ons<small>01</small></button>
+          <button class="tape" type="button" aria-pressed="false" data-tape="assets" data-osd="CH 03 ●REC" data-say="Still recording. Soon." style="--i:1;--c:#19E3FF;--h:270px">Assets<small>02</small></button>
+          <button class="tape" type="button" aria-pressed="false" data-tape="mobile" data-osd="CH 04 ●REC" data-say="Not rewound yet." style="--i:2;--c:#FF2E93;--k:#0A052E;--h:310px">Mobile games<small>03</small></button>
+          <button class="tape" type="button" aria-pressed="false" data-tape="pc" data-osd="CH 05 ●REC" data-say="That one is a long tape." style="--i:3;--c:#E63F0A;--k:#0A052E;--h:284px">PC games<small>04</small></button>
+        </div>
+        <div class="tv" role="region" aria-label="The tape now playing" aria-live="polite" data-osd="CH 02 ▶"></div>
+      </div>
+    </div>
+    <template id="ch-addons"><span class="state">NOW PLAYING</span><h3>Blender add-ons</h3><p>One tape so far, and it is a good one: Polygraph, our first Blender add-on. Recording next: Dancefloor, Abandonify and Proxyforge.</p><a class="btn" href="addons.html" data-ch>Get it at Waddle ▶</a></template>
+    <template id="ch-assets"><span class="state rec">RECORDING</span><h3>Assets</h3><p>Models, materials and bits you can drop straight into a scene. Nothing on the shelf yet.</p></template>
+    <template id="ch-mobile"><span class="state rec">RECORDING</span><h3>Mobile games</h3><p>Small games for small screens. Still in the recorder.</p></template>
+    <template id="ch-pc"><span class="state rec">RECORDING</span><h3>PC games</h3><p>Bigger tapes take longer. This one is not ready to show.</p></template>
+  </section>
+
+  <!-- 04: Polygraph. Scrolling disturbs the needle; stopping settles it -->
+  <section class="pg" id="polygraph" data-scene="POLYGRAPH">
+    <div class="pin">
+      <div class="pg-grid">
+        <div>
+          <p class="eyebrow">Now playing · Blender add-on · at Waddle</p>
+          <img class="logo" src="assets/brand/polygraph-logo-dark.svg" alt="Polygraph" width="599" height="105" loading="lazy" decoding="async">
+          <h2>Two lines that settle.</h2>
+          <p class="lede">A polygraph needle jumps when something is off and goes still when the answer is true. Keep scrolling and watch it jump. Stop, and it tells the truth.</p>
+          <a class="btn" href="#cube">What it does ▼</a>
+        </div>
+        <div class="needle" data-needle>
+          <svg viewBox="0 0 600 200" role="img" aria-label="Two chart lines that wobble while you scroll and settle when you stop">
+            <path class="pen"/><path class="ink"/>
+          </svg>
+          <div class="read"><b>= settled</b><span>Scroll, move or click to disturb it</span></div>
+          <p class="meter" aria-hidden="true">= you stopped. It settles.</p>
+        </div>
+      </div>
+      <button data-worker="inspector" data-pose="arms" data-facing="left"></button>
+      <div class="prop bench" aria-hidden="true"><span>Needle lab</span></div>
+    </div>
+  </section>
+
+
+  <!-- 04b: what Polygraph is for, in one cube -->
+  <section class="pitch" id="cube" aria-labelledby="pg-title">
+    <div class="pitch-grid">
+      <div class="pitch-copy">
+        <p class="eyebrow">Tape 01 · Blender add-on</p>
+        <h2 id="pg-title">Blender says 8. <span>Your engine says 24.</span></h2>
+        <p>A default cube has 8 vertices in Blender. Send it to glTF, Unity or Unreal and it arrives with 24, because each corner splits once for every face that meets it at a hard edge or a UV seam.</p>
+        <p>Polygraph counts what the engine will count, checks the total against a budget for the platform you’re making for, and points at what to cut first.</p>
+        <p class="eds">Free shows you the problem. Pro helps you fix it and plan around it. Studio does the same for a team of five.</p>
+        <p class="when" data-after="1.0 is out now for Blender 4.2 and later.">1.0 comes out <b>December 8</b> for Blender 4.2 and later.</p>
+        <div class="cta"><a class="btn" href="polygraph/">Read the guide ▶</a> <a class="btn ghost" href="polygraph/#editions">Compare editions</a></div>
+      </div>
+      <figure class="demo split" id="demo">
+        <fieldset class="engines"><legend>Count the cube as</legend>
+          <label><input type="radio" name="engine" value="blender">Blender</label>
+          <label><input type="radio" name="engine" value="glTF">glTF</label>
+          <label><input type="radio" name="engine" value="Unity" checked>Unity</label>
+          <label><input type="radio" name="engine" value="Unreal">Unreal</label>
+        </fieldset>
+        <svg class="cube" viewBox="-129 -138 257 275" role="img" aria-labelledby="cube-cap">
+<polygon class="face" points="20.0,-21.5 102.7,-75.3 102.7,57.8 20.0,111.5"/>
+<polygon class="face" points="-20.0,-111.5 102.7,-75.3 20.0,-21.5 -102.7,-57.8"/>
+<polygon class="face" points="-102.7,-57.8 20.0,-21.5 20.0,111.5 -102.7,75.3"/>
+<line class="edge back" x1="-20.0" y1="21.5" x2="-102.7" y2="75.3"/>
+<line class="edge back" x1="-20.0" y1="21.5" x2="-20.0" y2="-111.5"/>
+<line class="edge back" x1="-20.0" y1="21.5" x2="102.7" y2="57.8"/>
+<line class="edge" x1="-102.7" y1="75.3" x2="-102.7" y2="-57.8"/>
+<line class="edge" x1="-102.7" y1="75.3" x2="20.0" y2="111.5"/>
+<line class="edge" x1="-20.0" y1="-111.5" x2="-102.7" y2="-57.8"/>
+<line class="edge" x1="-20.0" y1="-111.5" x2="102.7" y2="-75.3"/>
+<line class="edge" x1="-102.7" y1="-57.8" x2="20.0" y2="-21.5"/>
+<line class="edge" x1="102.7" y1="57.8" x2="20.0" y2="111.5"/>
+<line class="edge" x1="102.7" y1="57.8" x2="102.7" y2="-75.3"/>
+<line class="edge" x1="20.0" y1="111.5" x2="20.0" y2="-21.5"/>
+<line class="edge" x1="102.7" y1="-75.3" x2="20.0" y2="-21.5"/>
+<g class="corner back" transform="translate(-20.0 21.5)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:1.1px;--dy:12.5px"/><circle class="v extra" r="4.2" style="--dx:-12.5px;--dy:-0.2px"/></g>
+<g class="corner" transform="translate(-102.7 75.3)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:-1.3px;--dy:12.4px"/><circle class="v extra" r="4.2" style="--dx:-12.2px;--dy:-2.6px"/></g>
+<g class="corner" transform="translate(-20.0 -111.5)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:-10.6px;--dy:-6.6px"/><circle class="v extra" r="4.2" style="--dx:7.7px;--dy:-9.9px"/></g>
+<g class="corner" transform="translate(-102.7 -57.8)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:-11.8px;--dy:4.0px"/><circle class="v extra" r="4.2" style="--dx:-2.7px;--dy:-12.2px"/></g>
+<g class="corner" transform="translate(102.7 57.8)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:11.8px;--dy:-4.0px"/><circle class="v extra" r="4.2" style="--dx:2.7px;--dy:12.2px"/></g>
+<g class="corner" transform="translate(20.0 111.5)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:10.6px;--dy:6.6px"/><circle class="v extra" r="4.2" style="--dx:-7.7px;--dy:9.9px"/></g>
+<g class="corner" transform="translate(102.7 -75.3)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:1.3px;--dy:-12.4px"/><circle class="v extra" r="4.2" style="--dx:12.2px;--dy:2.6px"/></g>
+<g class="corner" transform="translate(20.0 -21.5)"><circle class="v" r="4.2"/><circle class="v extra" r="4.2" style="--dx:-1.1px;--dy:-12.5px"/><circle class="v extra" r="4.2" style="--dx:12.5px;--dy:0.2px"/></g>
+</svg>
+        <div class="readout" aria-live="polite">
+          <div class="r main"><span id="vlabel">Vertices in Unity</span><span class="n" id="vcount">24</span></div>
+          <div class="r"><span>Triangles</span><span class="n">12</span></div>
+          <p class="cut" id="vnote">Hard edges and UV seams add 16 vertices: every corner is three corners now.</p>
+        </div>
+        <figcaption id="cube-cap">Blender’s default cube, counted the way each program counts it. Green dots are Blender’s vertices, red ones the copies an engine makes.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 05: Waddle. The tape goes over the counter -->
+  <section class="waddle" id="waddle" data-scene="WADDLE">
+    <div class="pin">
+      <div class="waddle-grid">
+        <img class="tile" src="assets/brand/waddle-mark-tile-site-duo.svg" alt="The Waddle mark: a duck’s foot drawn as a W" width="300" height="300" loading="lazy" decoding="async">
+        <div>
+          <p class="eyebrow">Our shop</p>
+          <img class="word" src="assets/brand/waddle-by-duck-initiative-wordmark-light.svg" alt="Waddle by Duck Initiative" width="1379" height="106" loading="lazy" decoding="async">
+          <h2>In the stores, we’re Waddle.</h2>
+          <p class="lede">Our add-ons are listed as Waddle by Duck Initiative on Blender Extensions, Superhive and Gumroad. If you see this foot, it’s one of ours.</p>
+          <div class="cta"><a class="btn" href="waddle.html" data-ch>Walk into Waddle ▶</a> <a class="btn ghost" href="addons.html" data-ch>Add-ons aisle</a></div>
+        </div>
+      </div>
+      <div class="cass" aria-hidden="true"><div class="lbl"><b>POLYGRAPH</b><span>TAPE 01</span><i></i></div><div class="win"><i></i><i></i></div></div>
+      <div class="counter" aria-hidden="true"></div>
+      <button data-worker="shopkeeper" data-pose="wave" data-facing="left"></button>
+      <div class="prop till" aria-hidden="true"><span>Waddle shop</span></div>
+    </div>
+  </section>
+
+  <!-- 06: stay tuned. Sign-up, contact, privacy -->
+  <section class="tune" id="news" aria-labelledby="tune-title">
+    <div class="tune-grid">
+      <div>
+        <p class="eyebrow">Stay tuned</p>
+        <h2 id="tune-title" data-after="Polygraph is out now.">Polygraph comes out on December&nbsp;8.</h2>
+      </div>
+      <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/duckinitiative" method="post">
+        <label for="email" data-after="Get an email when we ship something new">Get an email when Polygraph is out</label>
+        <div class="row"><input type="email" id="email" name="email" required autocomplete="email" spellcheck="false" placeholder="you@example.com"><input type="hidden" name="embed" value="1"><button class="btn" type="submit">Sign up</button></div>
+        <p class="fine">Only release news, a few times a year. <a href="#privacy">Where your address goes</a></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="desk-info" id="contact" aria-labelledby="contact-title">
+    <div class="info-grid">
+      <div>
+        <h2 id="contact-title">Write to us</h2>
+        <dl>
+          <div><dt>Help with an add-on</dt><dd><a href="mailto:support@duckinitiative.com">support@duckinitiative.com</a></dd></div>
+          <div><dt>Anything else</dt><dd><a href="mailto:hello@duckinitiative.com">hello@duckinitiative.com</a></dd></div>
+          <div><dt>Writing about Polygraph?</dt><dd><a href="polygraph/press/">Logos, screenshots and facts</a></dd></div>
+        </dl>
+      </div>
+      <div id="privacy">
+        <h2>Privacy</h2>
+        <p>This site sets no cookies, runs no analytics and loads nothing from anywhere else. GitHub Pages, which hosts it, keeps ordinary server logs.</p>
+        <p>If you sign up for email, your address is kept by Buttondown, the service that sends it. We use it for release news and nothing else, and every email has a link to unsubscribe.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="end">
+  <div class="rewind-row">
+    <button class="rewind" data-rewind>Be kind,<br>rewind. ◀◀</button>
+    <div class="rewind-post"><button data-worker="rewinder" data-pose="point" data-facing="left"></button><div class="machine" aria-hidden="true"><i></i><i></i><span>Rewinder</span></div></div>
+  </div>
+  <div class="meta"><span><a href="polygraph/">Polygraph guide</a> · <a href="polygraph/license/">Licence</a> · <a href="polygraph/refunds/">Refunds</a> · <a href="polygraph/press/">Press kit</a></span><span><a href="waddle.html" data-ch>Waddle</a> · <a href="addons.html" data-ch>Add-ons</a> · <a href="picker.html">Staff room (design the workers)</a></span></div>
+  <p class="legal">© 2026 Waddle by Duck Initiative. Blender is a trademark of the Blender Foundation, and we’re not affiliated with it.</p>
+</footer>
+
+<script src="assets/js/duck-avatar.js"></script>
+<script src="assets/js/workers.js"></script>
+<script src="assets/js/workers-store.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/links.js"></script>
+<script src="assets/js/audio.js"></script>
+<script src="assets/js/ducks.js"></script>
+<script src="assets/js/duck-story.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/launch.js"></script>
+<script src="assets/js/story.js"></script>
+</body>
+</html>

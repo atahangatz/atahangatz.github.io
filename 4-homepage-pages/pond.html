@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tape 00 — Duck Initiative</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A052E">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/addons.css">
+<link rel="stylesheet" href="assets/css/extras.css">
+</head>
+<body data-page="pond">
+<main>
+  <!-- shown until the case is solved -->
+  <section class="pond-locked" id="locked">
+    <p class="eyebrow">CH 00</p>
+    <h1>No signal.</h1>
+    <p class="lede">Something belongs on this channel and it is not here. The ducks know where it went. They only talk when they are fed, and they do not like talking about it.</p>
+    <p style="margin-top:30px"><a class="btn" href="index.html" data-ch>Back to the tape</a></p>
+  </section>
+
+  <!-- the recovered tape -->
+  <section class="pond" id="tape" hidden>
+    <video autoplay muted loop playsinline poster="assets/brand/duck-initiative-hero-1920x1080.jpg" aria-hidden="true">
+      <source src="assets/brand/duck-loop.mp4" type="video/mp4">
+    </video>
+    <span class="osd tl" aria-hidden="true">PLAY ▶<br>TAPE 00</span>
+    <span class="osd tr" aria-hidden="true">SP<br>RECOVERED</span>
+    <div class="pond-copy">
+      <p class="rec-line">● REC &nbsp;<b id="rec">0:00:00</b>&nbsp; AND STILL RECORDING</p>
+      <h1>Tape 00. <em class="split">The pond.</em></h1>
+      <div class="pond-story">
+        <p>You brought it up. It is still warm.</p>
+        <p>There is nothing on it but the pond. Hours of it. One duck, floating, looking down at something under the water. It never blinks and it never moves on.</p>
+        <p>Near the end it stops looking down. It looks up instead, straight into the lens, and stays that way. The date stamped on that part of the tape is today.</p>
+        <p>The ducks will not come near the screen while this is playing. They asked us to pass on two things: thank you for the bread, and whatever you do, do not rewind it.</p>
+      </div>
+      <div class="cta" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:30px">
+        <a class="btn" href="index.html" data-ch>Leave it playing</a>
+        <button class="btn ghost" type="button" id="reseal">Put it back in the pond</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/duck-avatar.js"></script>
+<script src="assets/js/workers.js"></script>
+<script src="assets/js/workers-store.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/links.js"></script>
+<script src="assets/js/audio.js"></script>
+<script src="assets/js/ducks.js"></script>
+<script src="assets/js/duck-story.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/launch.js"></script>
+<script>
+  (function () {
+    /* open if it was ever solved, if all seven lines were heard this visit, or if we arrived by the tape's own link */
+    var ok = window.location.hash === '#recovered';
+    try { ok = ok || localStorage.getItem('duck.case') === '1' || sessionStorage.getItem('duck.case') === '1' || (+sessionStorage.getItem('duck.fed') || 0) >= 60; } catch (e) {}
+    if (ok) { try { localStorage.setItem('duck.case', '1'); } catch (e) {} try { sessionStorage.setItem('duck.case', '1'); } catch (e) {} document.documentElement.classList.add('case-solved'); }
+    document.getElementById('locked').hidden = ok; document.getElementById('tape').hidden = !ok;
+    /* how long "it" has been recording: since the first thing a duck ever said to this visitor */
+    var t0 = Date.now(); try { t0 = +sessionStorage.getItem('duck.case.t0') || t0; } catch (e) {}
+    var rec = document.getElementById('rec');
+    setInterval(function () { var s = Math.floor((Date.now() - t0) / 1000); rec.textContent = Math.floor(s / 3600) + ':' + ('0' + Math.floor(s / 60) % 60).slice(-2) + ':' + ('0' + s % 60).slice(-2); }, 250);
+    /* they did ask */
+    var rew = document.querySelector('.deck [data-k="rew"]');
+    if (ok && rew) rew.addEventListener('click', function () {
+      var w = document.createElement('div'); w.className = 'pond-warn'; w.setAttribute('role', 'alert'); w.innerHTML = '<div>We asked you<br>not to.<small>It saw you do that.</small></div>'; document.body.appendChild(w);
+      if (window.DuckAudio && window.DuckAudio.dread) window.DuckAudio.dread(3);
+      setTimeout(function () { w.remove(); }, 2600);
+    });
+    document.getElementById('reseal').addEventListener('click', function () {
+      if (!window.confirm('Put Tape 00 back in the pond? Everything the ducks told you is forgotten, the bread count starts over, and the mother duck loses her gold.')) return;
+      try { localStorage.removeItem('duck.case'); } catch (e) {} try { sessionStorage.removeItem('duck.case'); sessionStorage.removeItem('duck.case.t0'); sessionStorage.removeItem('duck.fed'); } catch (e) {}
+      window.location.href = 'index.html';
+    });
+  })();
+</script>
+</body>
+</html>
