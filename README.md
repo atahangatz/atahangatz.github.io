@@ -64,6 +64,9 @@ All of this is invisible on the pages.
 - `llms.txt`: a plain Markdown summary of the studio, Polygraph's facts and prices, and where each page is.
 - `sitemap.xml`: the seven public pages. Update `lastmod` when a page changes. `pond.html` and `picker.html`
   are marked `noindex` and left out.
+- IndexNow: `4e63042861bc3e25a5aae4fbc267c64e.txt` at the root is the key. `.github/workflows/indexnow.yml`, here
+  and in the Polygraph repository, tells Bing and the other IndexNow engines when a page in `sitemap.xml`
+  changes. Run it by hand from the Actions tab to send every page, for example on launch day.
 - Every public page has a canonical address, Open Graph and Twitter tags, and a JSON-LD block in its head:
   Organization and WebSite (home), SoftwareApplication with the three editions as offers (home, add-ons,
   guide), TechArticle (guide), WebPage and BreadcrumbList (the rest).
