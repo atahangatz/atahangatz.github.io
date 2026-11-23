@@ -13,6 +13,21 @@ Key facts:
 - Polygraph does not decimate or retopologise meshes, and it does not run inside Unity or Unreal.
 - More add-ons are being made: Dancefloor, Abandonify and Proxyforge. None has a release date yet.
 
+## Common questions
+
+- **Why does Unity, Unreal or glTF show more vertices than Blender?** Blender stores one vertex for each corner position. A game engine needs one for every different normal, UV and colour that meets at a corner, so it splits vertices along UV seams, sharp edges and flat-shaded faces. The default cube is 8 vertices in Blender and 24 in any engine.
+- **How can I see the engine's vertex count without exporting?** Polygraph shows it in the Polygraph tab of the 3D Viewport's Sidebar, counted the way glTF, Unity or Unreal Engine (Nanite off) imports, and the Active Object panel breaks the count down by cause. Engine counts are in every edition, Free included.
+- **When does a mesh need 32-bit indices?** Past 65,535 engine vertices. Polygraph flags it, because some mobile targets don't like it.
+- **How many triangles can a VRChat avatar have?** PC: 32,000 for Excellent and 70,000 for Good, Medium and Poor. Mobile: 7,500 Excellent, 10,000 Good, 15,000 Medium, 20,000 Poor. Bones, material slots, skinned meshes and texture memory are ranked too. Source: creators.vrchat.com, checked November 16, 2026.
+- **What is the triangle budget on Meta Quest?** Per frame, 750k to 1M triangles on Quest 2 and Pro, 1.3M to 1.8M on Quest 3 and 3S. For a medium simulation, 200 to 300 draw calls on Quest 2 and Pro, 400 to 600 on Quest 3 and 3S. Source: developers.meta.com.
+- **What is the Roblox triangle limit?** 20,000 triangles per mesh, and 4,000 for a rigid accessory. Source: create.roblox.com.
+- **What are Fortnite UEFN prop budgets?** Epic's LOD0 targets are 2,500 triangles for a large prop, 900 for a medium one and 400 for a small one, and its validator warns past 30,000 vertices in a mesh. Source: dev.epicgames.com.
+- **What about Apple Vision Pro?** visionOS: under 500,000 triangles and 500 draw calls in a Full Space, under 250,000 and 250 in the Shared Space. Source: developer.apple.com.
+- **Does Polygraph reduce the polycount for me?** No. It doesn't decimate or retopologise. Where to Cut lists the changes that would save the most, and What If (Pro) shows what a change would save before you make it.
+- **Which Blender versions does it support?** Blender 4.2 and later, on Windows, macOS and Linux.
+
+All 32 budgets, each with its limits and the page they come from: [Budgets](https://duckinitiative.com/polygraph/#budgets).
+
 ## Polygraph
 
 - [Polygraph guide](https://duckinitiative.com/polygraph/): installing it, every panel, engine counts, the 32 budgets and their sources, the 21 mesh checks, Where to Cut, What If, reports, the command line check and the Python API.

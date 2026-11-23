@@ -57,11 +57,12 @@ The live site is two GitHub Pages repositories, and this folder is laid out to d
 ## Search engines and AI search
 All of this is invisible on the pages.
 
-- `robots.txt`: everyone may crawl, except the three crawlers that only gather text to train models
-  (GPTBot, ClaudeBot, Google-Extended). AI search that cites its sources (OAI-SearchBot, ChatGPT-User,
-  PerplexityBot) is allowed by name. It also points at `sitemap.xml`. Both must sit at the root of the
+- `robots.txt`: every crawler may read the site, AI ones included (search, assistants and model training
+  alike), so AI tools can learn about Polygraph and recommend it. Only the two READMEs are held back. It
+  also points at `sitemap.xml`. Both must sit at the root of the
   homepage repository; a robots.txt inside `/polygraph/` would be ignored.
-- `llms.txt`: a plain Markdown summary of the studio, Polygraph's facts and prices, and where each page is.
+- `llms.txt`: a plain Markdown summary of the studio, Polygraph's facts and prices, common questions with
+  the budget figures, and where each page is. When a budget changes in the guide, change it here too.
 - `sitemap.xml`: the seven public pages. Update `lastmod` when a page changes. `pond.html` and `picker.html`
   are marked `noindex` and left out.
 - IndexNow: `4e63042861bc3e25a5aae4fbc267c64e.txt` at the root is the key. `.github/workflows/indexnow.yml`, here
