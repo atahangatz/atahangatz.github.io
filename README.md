@@ -38,7 +38,7 @@ Duck Initiative and Polygraph files are used exactly as supplied. Only the Waddl
 Archivo Black, Besley, IBM Plex Sans and IBM Plex Mono are all served from `assets/fonts/` (and Archivo Black
 and the two Plex faces again from `polygraph/fonts/`, so the Polygraph folder stands alone). All four are
 under the SIL Open Font Licence, `fonts/OFL.txt`. No page loads anything from another site, which is what
-the Privacy paragraph on the home page says.
+the Privacy paragraph on the home page says. The one request that leaves is the visit count, below.
 
 ## Going live: two repositories
 The live site is two GitHub Pages repositories, and this folder is laid out to drop into both.
@@ -122,3 +122,15 @@ Every eight crumbs a new duckling joins (up to nine ducks, five on phones). The 
 ## Links
 `assets/js/links.js` holds the social and shop links shown in the right-hand rail and the footer.
 Paste each address in; an entry with no address shows greyed out.
+
+## Visit counts
+GoatCounter counts visits and outbound clicks, without cookies. Dashboard: duckinitiative.goatcounter.com.
+
+- `assets/js/count.js` is GoatCounter's own script, copied here so nothing loads from elsewhere. It doesn't update
+  itself: now and then, replace it with a fresh copy of https://gc.zgo.at/count.js.
+- `assets/js/clicks.js` sends one event for each click on a link that leaves the site, named after where it goes:
+  `click/gumroad/polygraph`, `click/superhive/polygraph`, `click/extensions/polygraph`, `click/press-kit/<file>`,
+  `click/mail/support`, and `click/out/<site>` for the rest. The buttons themselves carry nothing extra.
+- Every public page, the Polygraph pages and the two newsletter pages load both scripts just before `</head>`.
+  A new page needs the same two lines. The 404 page, `pond.html` and `picker.html` are left uncounted.
+- Newsletter sign-ups show up as visits to `/newsletter/check-email/`; Buttondown has the confirmed number.
