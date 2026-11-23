@@ -25,5 +25,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /README.md
+Disallow: /polygraph/README.md
 
 Sitemap: https://duckinitiative.com/sitemap.xml
