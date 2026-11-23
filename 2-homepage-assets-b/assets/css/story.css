@@ -1,0 +1,115 @@
+/* Duck Initiative — the home page as one tape. Each [data-scene] is tall; its .pin sticks to the screen
+   while you scroll through it, and --p (0 to 1, set by story.js) drives everything inside.
+   --v is scroll speed (0 to 1), --vd the same with a sign: scrolling fast is fast-forward. */
+:root { --v: 0; --vd: 0; --tp: 0; }
+[data-scene] { position: relative; padding: 0; --p: 0; }
+.pin { position: sticky; top: 0; height: calc(100svh - var(--deck-h)); overflow: hidden; padding: 96px var(--pad) 36px; transform: skewX(calc(var(--vd) * -1.6deg)); }
+.pin h2, .pin .huge { text-shadow: calc((var(--trk) + var(--v) * 3) * -.07em) 0 0 var(--magenta), calc((var(--trk) + var(--v) * 3) * .07em) 0 0 var(--cyan); }
+
+/* tape progress along the top + on-screen display */
+.tape-bar { pointer-events: none; position: fixed; left: 0; right: 0; top: 71px; height: 5px; z-index: 73; display: flex; transform-origin: 0 50%; transform: scaleX(var(--tp)); }
+.tape-bar i { flex: 1; }
+.osd-fix { position: fixed; z-index: 62; left: var(--pad); top: 84px; font: 600 clamp(14px, 1.5vw, 20px)/1.3 var(--mono); letter-spacing: .12em; color: var(--light); pointer-events: none; mix-blend-mode: difference; }
+.osd-fix.r { left: auto; right: var(--pad); text-align: right; }
+/* fast-forward tear lines */
+.tear { position: fixed; inset: 0; z-index: 79; pointer-events: none; opacity: calc(var(--v) * 1.2);
+  background: linear-gradient(to bottom, transparent 0 12%, rgba(236, 235, 245, .5) 12% 12.6%, transparent 12.6% 38%, rgba(25, 227, 255, .5) 38% 39.4%, transparent 39.4% 61%, rgba(255, 46, 147, .5) 61% 61.8%, transparent 61.8% 84%, rgba(236, 235, 245, .4) 84% 86%, transparent 86%);
+  transform: translateY(calc(var(--vd) * 9vh)); }
+
+/* ---------- 00 insert tape ---------- */
+#s-insert { height: 230vh; }
+#s-insert .pin { background: var(--blue); color: #fff; --a: min(1, calc(var(--p) / .72)); }
+.nosig { position: absolute; left: var(--pad); top: 150px; width: min(24vw, 320px); font: 600 clamp(22px, 3.2vw, 46px)/1.1 var(--mono); letter-spacing: .08em; margin: 0; }
+.nosig small { display: block; font-size: .42em; letter-spacing: .03em; margin-top: 14px; opacity: .85; }
+.chute { position: absolute; left: 50%; bottom: 17vh; width: min(560px, 78vw); height: 64vh; transform: translateX(-50%); overflow: hidden; }
+.cass { position: absolute; left: 0; right: 0; top: 0; aspect-ratio: 187 / 103; background: #17123A; border: 4px solid #05021C; border-radius: 10px; padding: 5% 6%; box-shadow: inset 0 0 0 3px #2B2466; transform: translateY(calc(var(--a) * (64vh + 6%))); }
+.cass .lbl { background: var(--light); color: var(--water); height: 46%; padding: 4% 5%; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.cass .lbl b { font: 900 clamp(18px, 3.4vw, 34px)/.9 var(--display); letter-spacing: -.02em; }
+.cass .lbl span { font: 600 clamp(9px, 1.1vw, 12px)/1 var(--mono); letter-spacing: .12em; }
+.cass .lbl i { position: absolute; right: 0; top: 0; bottom: 0; width: 30%; background: linear-gradient(to right, var(--yellow) 0 25%, var(--cyan) 25% 50%, var(--magenta) 50% 75%, var(--feet) 75%); }
+.cass .win { margin: 5% auto 0; width: 62%; height: 34%; background: #05021C; border-radius: 6px; display: flex; justify-content: space-around; align-items: center; }
+.cass .win i { width: 22%; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(var(--light) 0 12%, #17123A 12% 33%, var(--light) 33% 45%, #17123A 45% 66%, var(--light) 66% 78%, #17123A 78%); transform: rotate(calc(var(--p) * 900deg)); }
+.vcr { position: absolute; left: 50%; bottom: 5vh; width: min(760px, 92vw); height: 12vh; min-height: 70px; transform: translateX(-50%); background: #05021C; border: 4px solid var(--light); display: flex; align-items: center; justify-content: space-between; padding: 0 4%; font: 600 14px/1 var(--mono); letter-spacing: .12em; }
+.vcr::before { content: ""; position: absolute; left: 12%; right: 12%; top: -4px; height: 12px; background: #000; border: 4px solid var(--light); }
+.vcr b { color: var(--yellow); font-weight: 600; }
+.vcr .lamp { width: 14px; height: 14px; border-radius: 50%; background: color-mix(in srgb, var(--mint) calc(var(--a) * 100%), #2A2466); display: inline-block; vertical-align: -2px; margin-right: 8px; }
+/* once the tape is in, the blue screen eases to the dark of the next scene: no flash, no static */
+.flash { position: absolute; inset: 0; z-index: 9; pointer-events: none; background: var(--water); opacity: clamp(0, calc((var(--p) - .74) / .26), 1); }
+.flash i { display: none; }
+.scroll-hint { position: absolute; left: var(--pad); bottom: 22px; font: 600 14px/1 var(--mono); letter-spacing: .12em; opacity: calc(1 - var(--p) * 5); }
+
+/* ---------- 01 title ---------- */
+#s-title { height: 300vh; }
+#s-title .pin { padding: 0; background: var(--water); display: block; --b: clamp(0, calc((var(--p) - .12) / .5), 1); --c: clamp(0, calc((var(--p) - .68) / .18), 1); }
+.tvbox { position: absolute; inset: 0; clip-path: inset(calc((1 - var(--b)) * 24%) calc((1 - var(--b)) * 30%) round calc((1 - var(--b)) * 22px)); }
+.huge { position: absolute; left: 0; right: 0; margin: 0; text-align: center; font: 900 26vw/.8 var(--display); letter-spacing: -.05em; color: var(--yellow); white-space: nowrap; z-index: 3; pointer-events: none; text-transform: uppercase; }
+.huge.a { top: 14vh; transform: translateX(calc(var(--b) * -115vw)) rotate(calc(var(--b) * -6deg)); }
+.huge.b { bottom: 8vh; font-size: 15.5vw; transform: translateX(calc(var(--b) * 115vw)) rotate(calc(var(--b) * 5deg)); }
+#s-title .hero-copy { position: absolute; left: 0; bottom: 0; opacity: var(--c); transform: translateY(calc((1 - var(--c)) * 40px)); padding-bottom: clamp(28px, 5vw, 60px); }
+#s-title .osd.tr { top: 130px; opacity: var(--b); }
+#s-title .wk { opacity: var(--b); }
+.hero .tag { text-transform: uppercase; color: var(--yellow); font-size: clamp(26px, 4.2vw, 68px); line-height: .92; max-width: 11em; }
+.hero .tag .split { color: var(--light); }
+
+/* ---------- 02 runway: words run sideways, the courier runs with them ---------- */
+#s-run { height: 340vh; }
+#s-run .pin { background: var(--light); color: var(--water); padding: 0; display: flex; flex-direction: column; justify-content: center; }
+.run-line { margin: 0; white-space: nowrap; font: 900 min(30vh, 26vw)/.86 var(--display); letter-spacing: -.045em; text-transform: uppercase; width: max-content; padding: 0 60vw 0 30vw; transform: translateX(calc(var(--p) * (100vw - 100%))); text-shadow: calc((var(--trk) + var(--v) * 3) * -.05em) 0 0 var(--magenta), calc((var(--trk) + var(--v) * 3) * .05em) 0 0 var(--cyan); }
+.run-line span { color: #B83207; }
+.run-line u { text-decoration: none; -webkit-text-stroke: 3px var(--water); color: transparent; text-shadow: none; }
+.ruler { height: 34px; background: repeating-linear-gradient(to right, var(--water) 0 3px, transparent 3px 28px), repeating-linear-gradient(to right, var(--water) 0 3px, transparent 3px 140px); background-size: auto 40%, auto 100%; background-repeat: repeat-x; background-position: calc(var(--p) * -900px) 100%, calc(var(--p) * -900px) 0; margin: 0 0 3vh; border-bottom: 3px solid var(--water); }
+.ruler.b { margin: 3vh 0 0; border-bottom: 0; border-top: 3px solid var(--water); background-position: calc(var(--p) * 600px) 0, calc(var(--p) * 600px) 0; }
+.run-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; display: flex; }
+.run-floor i { flex: 1; }
+#s-run .wk { bottom: 10px; left: 0; --wk-w: clamp(96px, 12vw, 170px); }
+#s-run .cap { position: absolute; left: var(--pad); top: 132px; font: 600 14px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+
+/* ---------- 03 shelf: tapes drop in one by one ---------- */
+#shelf { height: 280vh; }
+#shelf .pin { background: var(--water); display: flex; flex-direction: column; justify-content: center; }
+#shelf h2 { font-size: clamp(38px, 7.2vw, 118px); text-transform: uppercase; color: var(--yellow); letter-spacing: -.04em; line-height: .86; }
+#shelf h2 em { color: var(--light); }
+#shelf .shelf-wrap { margin-top: clamp(18px, 4vh, 48px); }
+#shelf .shelf { min-height: min(330px, 40vh); }
+#shelf .tape { --t: clamp(0, calc((var(--p) - .06 - var(--i) * .13) / .13), 1); transform: rotate(180deg) translateY(calc((1 - var(--t)) * 120vh)) rotate(calc((1 - var(--t)) * (var(--i) - 1.5) * 14deg)); height: min(var(--h), 34vh); }
+#shelf .tv { --t: clamp(0, calc((var(--p) - .62) / .14), 1); opacity: var(--t); transform: scale(calc(.8 + var(--t) * .2)) rotate(calc((1 - var(--t)) * 4deg)); min-height: min(340px, 40vh); }
+#shelf .shelf { border-bottom-width: 10px; }
+
+/* ---------- 04 polygraph: scrolling disturbs the needle, stopping settles it ---------- */
+#polygraph { height: 250vh; }
+#polygraph .pin { background: var(--pg-paper); color: var(--pg-ink); display: flex; flex-direction: column; justify-content: center; }
+#polygraph .pin::before { content: ""; position: absolute; inset: 0; z-index: 8; background: var(--water); pointer-events: none; --w: clamp(0, calc(var(--p) / .2), 1);
+  clip-path: polygon(0 calc(var(--w) * 112%), 100% calc(var(--w) * 112% - 9%), 100% 100%, 0 100%); }
+#polygraph .pin h2 { text-shadow: none; }
+#polygraph .needle { --t: clamp(0, calc((var(--p) - .2) / .2), 1); opacity: var(--t); }
+#polygraph .meter { font: 600 14px/1.4 var(--mono); letter-spacing: .03em; color: var(--pg-pen); margin: 18px 0 0; }
+
+/* ---------- 05 waddle: eject, over the counter ---------- */
+#waddle { height: 240vh; overflow: visible; }
+#waddle .pin { background: var(--blue); color: #fff; display: flex; flex-direction: column; justify-content: center; --t: clamp(0, calc(var(--p) / .5), 1); }
+#waddle .tile { transform: rotate(calc((1 - var(--t)) * -200deg)) scale(calc(.2 + var(--t) * .8)); }
+#waddle h2 { text-transform: uppercase; letter-spacing: -.04em; line-height: .88; font-size: clamp(32px, 5.6vw, 92px); color: var(--yellow); }
+#waddle .cass { padding: 10px 12px; right: auto; top: auto; bottom: 26px; width: clamp(130px, 14vw, 200px); height: calc(clamp(130px, 14vw, 200px) * .56); aspect-ratio: auto; left: calc(-20vw + var(--p) * 74vw); transform: rotate(calc(-14deg + var(--p) * 14deg)); z-index: 4; }
+#waddle .cass .lbl b { font-size: clamp(10px, 1.1vw, 15px); }
+#waddle .cass .lbl span { font-size: 8px; }
+#waddle .cass .lbl { padding: 8px 10px; }
+#waddle .cass .win { margin-top: 10px; }
+
+/* ---------- end ---------- */
+.end .rewind { text-transform: uppercase; }
+
+/* phones, short windows, reduced motion: no pinning, everything in its finished state */
+.story-off [data-scene] { height: auto !important; }
+.story-off .pin { position: static; height: auto; min-height: 0; transform: none; padding-top: 110px; padding-bottom: 70px; }
+.story-off #s-insert, .story-off .tear, .story-off .osd-fix { display: none; }
+.story-off #waddle { overflow: hidden; }
+.story-off #s-title .pin { height: calc(100svh - var(--deck-h)); position: relative; }
+.story-off .huge, .story-off #s-run .cap { display: none; }
+.story-off #s-run .pin { padding: 40px 0 160px; overflow: hidden; }
+.story-off .run-line { white-space: normal; width: auto; padding: 0 var(--pad); transform: none; font-size: clamp(44px, 13vw, 120px); }
+.story-off #shelf .tape { height: var(--h); }
+.story-off #waddle .cass { display: none; }
+.story-off #waddle .pin, .story-off #polygraph .pin { padding-bottom: 240px; }
+
+/* picking a tape before the TV has finished arriving brings it in fully */
+#shelf .tv.is-picked { opacity: 1; transform: none; transition: opacity .2s steps(4), transform .2s steps(4); }
