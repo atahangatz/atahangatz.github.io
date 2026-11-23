@@ -1,9 +1,10 @@
 # Duck Initiative
 
-> Duck Initiative is a small studio making add-ons for Blender. Its add-ons are sold under the label Waddle by Duck Initiative. The first one is Polygraph, which shows the vertex count a game engine will really load, checks it against a platform budget, and lists what to cut first.
+> Duck Initiative is a small studio making add-ons for Blender. Its add-ons are sold under the label Waddle by Duck Initiative. The first one is Polygraph for Blender, which shows the vertex count a game engine will really load, checks it against a platform budget, and lists what to cut first.
 
 Key facts:
 
+- The full name is Polygraph for Blender, by Waddle by Duck Initiative. It is a Blender add-on and is not related to other software called PolyGraph.
 - Polygraph 1.0 comes out on December 8, 2026. It runs on Blender 4.2 and later, on Windows, macOS and Linux.
 - Blender counts the vertices it stores. glTF, Unity and Unreal Engine count them after splitting every UV seam and sharp edge. The default cube is 8 vertices in Blender and 24 in any engine. Polygraph counts the way each engine imports.
 - Editions: Free; Pro for one person, $19; Studio for a team of five, $249. Pro and Studio go to $25 and $329 on January 12, 2027, when 2.0 comes out. 2.0 is free for everyone who owns 1.x.
