@@ -1,0 +1,41 @@
+# Duck Initiative
+
+> Duck Initiative is a small studio making add-ons for Blender. Its add-ons are sold under the label Waddle by Duck Initiative. The first one is Polygraph, which shows the vertex count a game engine will really load, checks it against a platform budget, and lists what to cut first.
+
+Key facts:
+
+- Polygraph 1.0 comes out on December 8, 2026. It runs on Blender 4.2 and later, on Windows, macOS and Linux.
+- Blender counts the vertices it stores. glTF, Unity and Unreal Engine count them after splitting every UV seam and sharp edge. The default cube is 8 vertices in Blender and 24 in any engine. Polygraph counts the way each engine imports.
+- Editions: Free; Pro for one person, $19; Studio for a team of five, $249. Pro and Studio go to $25 and $329 on January 12, 2027, when 2.0 comes out. 2.0 is free for everyone who owns 1.x.
+- Free is on extensions.blender.org and Gumroad. Pro and Studio are on Superhive and Gumroad.
+- 32 budgets ship with Pro and Studio and 5 with Free (Meta Quest, VRChat, Roblox, Fortnite UEFN, visionOS and more). 26 of them cite the page their limits come from. There are 21 mesh checks in every edition.
+- Every edition is licensed GPL-3.0-or-later and can be used for paid work. There is no account and no licence key, and Polygraph works offline.
+- Polygraph does not decimate or retopologise meshes, and it does not run inside Unity or Unreal.
+- More add-ons are being made: Dancefloor, Abandonify and Proxyforge. None has a release date yet.
+
+## Polygraph
+
+- [Polygraph guide](https://duckinitiative.com/polygraph/): installing it, every panel, engine counts, the 32 budgets and their sources, the 21 mesh checks, Where to Cut, What If, reports, the command line check and the Python API.
+- [Editions compared](https://duckinitiative.com/polygraph/#editions): what Free, Pro and Studio each include, feature by feature.
+- [Licence and terms](https://duckinitiative.com/polygraph/license/): the GPL code, what a purchase covers, how seats are counted, updates and the 2.0 upgrade.
+- [Refunds](https://duckinitiative.com/polygraph/refunds/): 30 days from purchase; what is covered and how to ask.
+- [Press kit](https://duckinitiative.com/polygraph/press/): the short description, a fact table, screenshots, clips and logos, free to use in coverage.
+
+## Duck Initiative and Waddle
+
+- [Home](https://duckinitiative.com/): the studio, Polygraph in short, and the email sign-up for release news.
+- [Blender add-ons](https://duckinitiative.com/addons.html): Polygraph's editions and prices, and the add-ons that are coming.
+- [Waddle](https://duckinitiative.com/waddle.html): the shop label. Add-ons are listed as "Waddle by Duck Initiative" on Blender Extensions, Superhive and Gumroad.
+
+## Contact
+
+- Help with an add-on: support@duckinitiative.com
+- Press and anything else: hello@duckinitiative.com
+
+## Optional
+
+- [Polygraph on Gumroad](https://waddlebyduck.gumroad.com/l/polygraph): Pro and Studio.
+- [Polygraph Free on Blender Extensions](https://extensions.blender.org/add-ons/polygraph/)
+- [Polygraph Free on Gumroad](https://waddlebyduck.gumroad.com/l/polygraph-free)
+- [Polygraph on Superhive](https://superhivemarket.com/products/polygraph): Pro and Studio.
+- [Issues page](https://github.com/atahangatz/polygraph/issues): bug reports.
