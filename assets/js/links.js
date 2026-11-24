@@ -4,13 +4,16 @@
    Shops are from the Waddle market list of 22 November 2026. Entries marked home: true point at the
    marketplace's front page because our profile address there is not confirmed yet; replace the url with
    the profile address when it is, and delete home: true.
-   Icons available: instagram, x, reddit, vimeo, gumroad, superhive, unity, turbosquid, itch.
+   Icons available: instagram, threads, tiktok, x, bluesky, reddit, vimeo, gumroad, superhive, unity, turbosquid, itch.
    Any other id shows its "mono" letters instead. */
 var DUCK_LINKS = {
   social: [
+    { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/duckinitiative/' },
+    { id: 'threads',   label: 'Threads', url: 'https://www.threads.com/@duckinitiative' },
+    { id: 'tiktok',    label: 'TikTok', url: 'https://www.tiktok.com/@duckinitiative' },
+    { id: 'x',         label: 'X', url: 'https://x.com/duck_initiative' },
+    { id: 'bluesky',   label: 'Bluesky', url: 'https://bsky.app/profile/duckinitiative.com' },
     { id: 'vimeo',     label: 'Vimeo', url: 'https://vimeo.com/duckinitiative' },
-    { id: 'instagram', label: 'Instagram', url: '' },
-    { id: 'x',         label: 'X', url: '' },
     { id: 'reddit',    label: 'Reddit', url: '' }
   ],
   shops: [
