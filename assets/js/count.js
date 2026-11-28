@@ -15,6 +15,21 @@
 				window.goatcounter[k] = set[k]
 	}
 
+	// Duck Initiative: a link tagged ?ref=NAME (or utm_source, src, source) counts NAME as
+	// the referrer, so reel and profile links show up by name under Top referrers.
+	if (window.goatcounter.referrer === undefined)
+		window.goatcounter.referrer = function(r) {
+			var keys = ['ref', 'utm_source', 'src', 'source']
+			for (var i = 0; i < keys.length; i++) {
+				var v = window.goatcounter.get_query(keys[i])
+				if (v) {
+					try       { return decodeURIComponent(v.replace(/\+/g, ' ')) }
+					catch (e) { return v }
+				}
+			}
+			return r
+		}
+
 	var enc = encodeURIComponent
 
 	// Get all data we're going to send off to the counter endpoint.
